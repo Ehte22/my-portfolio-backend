@@ -11,7 +11,13 @@ const app = express()
 
 const corsOptions = {
     // origin: 'http://localhost:3000',
-    origin: "https://my-portfolio-ashen-seven-27.vercel.app",
+    // origin: "https://my-portfolio-ashen-seven-27.vercel.app",
+    origin: (origin, callback) => {
+        // Allow requests with no origin, like mobile apps or curl requests
+
+        if (!origin) return callback(null, true);
+        callback(null, true);
+    },
     credentials: true,
 };
 
