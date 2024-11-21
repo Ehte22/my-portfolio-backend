@@ -8,7 +8,6 @@ const { protectedRoute } = require("./utils/protected")
 
 const app = express()
 
-app.use(express.json())
 
 const corsOptions = {
     // origin: 'http://localhost:3000',
@@ -18,6 +17,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(cookieParser())
+app.use(express.json())
 
 app.use("/api/client", require("./routes/clientRouter"))
 app.use("/api/user", require("./routes/userRouter"))

@@ -2,6 +2,7 @@ const asyncHandler = require('express-async-handler')
 const jwt = require('jsonwebtoken')
 
 exports.protectedRoute = asyncHandler(async (req, res, next) => {
+    console.log(req.cookies, "Cookie");
 
     if (!req.cookies.user) {
         return res.status(401).json({ message: 'No Cookie Found' })

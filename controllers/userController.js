@@ -44,7 +44,7 @@ exports.signIn = asyncHandler(async (req, res) => {
     res.cookie(
         "user",
         token,
-        { maxAge: 900000, httpOnly: true, secure: process.env.NOD_ENV === 'production' }
+        { maxAge: 900000, httpOnly: true, secure: true, sameSite: "none" }
     )
 
     res.status(200).json({
