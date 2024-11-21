@@ -35,12 +35,8 @@ exports.signIn = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'Invalid - Credential - Password do not match' })
     }
 
-    console.log(user, "userrrrrrrrrr");
-
-
     const token = generateToken({ userId: user._id })
 
-    console.log(token, "tokennnnnnnnnn");
     res.cookie(
         "user",
         token,
