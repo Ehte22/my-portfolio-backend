@@ -12,7 +12,7 @@ exports.register = asyncHandler(async (req, res) => {
 
     const client = await sendEmail({
         to: email,
-        message: `Hi ${name}, Thank you for contacting me. I will contact you as soon as possible`,
+        message: `Hi ${name}, thank you for reaching out! I appreciate your message and will get back to you as soon as possible. Have a great day!`,
         subject: "Registration",
     })
 
