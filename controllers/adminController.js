@@ -11,7 +11,7 @@ const cloudinary = require('../utils/uploadConfig')
 const Skill = require('../models/Skill')
 
 exports.getProjects = asyncHandler(async (req, res) => {
-    const projects = await Project.find()
+    const projects = await Project.find().sort({ priority: 1 })
     res.status(200).json({ message: 'Projects Get Successfully', result: projects })
 })
 
@@ -92,7 +92,7 @@ exports.deleteProject = asyncHandler(async (req, res) => {
 })
 
 exports.getSkills = asyncHandler(async (req, res) => {
-    const skills = await Skill.find()
+    const skills = await Skill.find().sort({ priority: 1 })
     res.status(200).json({ message: 'Skills Get Successfully', result: skills })
 })
 

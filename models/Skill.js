@@ -10,7 +10,7 @@ const skillSchema = new mongoose.Schema({
         required: true
     },
     priority: {
-        type: String,
+        type: Number,
         required: true
     },
     percentage: {
